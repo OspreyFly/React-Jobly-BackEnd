@@ -53,6 +53,7 @@ router.post("/", ensureAdmin, async function (req, res, next) {
 
 router.get("/", async function (req, res, next) {
   const q = req.query;
+  console.log("parameters: ", q);
   // arrive as strings from querystring, but we want as ints
   if (q.minEmployees !== undefined) q.minEmployees = +q.minEmployees;
   if (q.maxEmployees !== undefined) q.maxEmployees = +q.maxEmployees;
@@ -65,6 +66,7 @@ router.get("/", async function (req, res, next) {
     }
 
     const companies = await Company.findAll(q);
+    console.log("After FindAll: ",companies);
     return res.json({ companies });
   } catch (err) {
     return next(err);

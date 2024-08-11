@@ -12,8 +12,7 @@
       "minimum": 0
     },
     "name": {
-      "type": "string",
-      "minLength": 1
+      "type": "string"
     }
   },
   "additionalProperties": false,
